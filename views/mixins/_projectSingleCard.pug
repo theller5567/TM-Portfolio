@@ -1,0 +1,15 @@
+mixin projectSingleCard(project = {})
+  .project--single
+    .project__hero
+        if project.link
+            a(href=`${project.link}`, target='new_blank')
+                img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
+            .button--view
+                a(href=`${project.link}`, target='new_blank') Open Project
+        else
+            img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
+    ul.tags
+        each t in project.tags
+            li.tag
+                span.tag__link= t
+    

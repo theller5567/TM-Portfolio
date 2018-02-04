@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/_projectCard
+include mixins/_pagination
+
+block content
+  .inner
+    h2.page-title= title
+    h3.subtitle--center Specializing in javaScript, HTML5/CSS3, Responsive Design, Animation & UX Design.
+    .projects
+      each project in projects
+        +projectCard(project)
+    +pagination(page, pages, count)
+    

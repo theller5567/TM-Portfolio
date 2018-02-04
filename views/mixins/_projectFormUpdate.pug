@@ -1,0 +1,24 @@
+mixin projectFormUpdate(project = {})
+  pre= h.dump(projects)
+  form(action=`/add-project/${projects._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+    label(for="name") Name
+    input(type="text" name="name" value=projects.name)
+    label(for="short_description") Short Description
+    textarea(name="short_description")= projects.short_description
+    label(for="description") Description
+    textarea(name="description")= projects.description
+    label(for="link") Web Link
+    input(type="text" name="link" value=projects.link)
+    //- Image Upload
+    label(for="photo") Photo
+      input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
+      if projects.photo
+        img(src=`/uploads/projects/${projects.photo}`, alt=project.name width=200)
+    - const choices = ['Web-Site', 'Javascript', 'Web-App', 'Angular', 'Design', 'Animation', 'Illustration']
+    - const tags = projects.tags || []
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+          label(for=choice) #{choice}
+    input(type="submit" value="Save →" class="button")

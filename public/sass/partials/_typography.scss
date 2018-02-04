@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'panama';
+    src: url('/fonts/panama-bold-webfont.woff2') format('woff2'),
+         url('/fonts/panama-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  font-size:10px;
+}
+
+body {
+  font-size:1.5rem;
+  color:$black;
+}
+
+h1, h2, h3, h4, h5, h6, {
+  font-size: 5rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 10px 0;
+}
+h3 {
+  font-size: 3.5rem;
+}
+h4 {
+  font-size: 3rem;
+}
+h5 {
+  font-size: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color:$black;
+}
+
+p a {
+  border-bottom: 2px solid $yellow;
+}
+
+p {
+  line-height: 2;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  color: lighten(#444444, 15%);
+  font-size: 1.2em;
+  &--center {
+    @extend .subtitle;
+    text-align: center;
+  }
+}
+
+.page-title {
+  font-size: 4em;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title {
+  position: relative;
+  margin:0;
+  padding: 0.5em;
+  font-size: 24px;
+  z-index: 2;
+  line-height: 1.1;
+  &--long {
+    font-size: 30px;
+  }
+  &--green {
+    @extend .title;
+    a {
+       color: $green;
+    }
+  }
+  // inline link inside
+}
+
+.title--single {
+  font-size: 6rem;
+  text-align: center;
+  a {
+    color: white;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+  }
+}

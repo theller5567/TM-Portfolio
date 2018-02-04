@@ -1,0 +1,25 @@
+mixin contactForm()
+    .contact-form
+        form(action=`/email` method="POST" class="card")
+            .form-group
+                label(for="name") Name
+                input(type="text" name="name" class="input-control")
+                label(for="email" class="right-inline") Email
+                input(type="email" name="email" class="input-control")
+            .form-group
+                label(for="phone") Phone Number
+                input(type="telephone" name="phone" class="input-control")
+                label(for="website" class="right-inline") Website
+                input(type="text" name="website" class="input-control")
+            .form-group
+                label(for="budget") Budget
+                input(type="text" name="budget" class="input-control")
+                label(for="start_date" class="right-inline") Start Date
+                input(type="text" name="start_date" class="input-control")
+            .form-group__wide
+                label(for="hear") How did you hear about Travismichael.net?
+                input(type="text" name="hear" class="input-control")
+            .form-group__wide
+                label(for="description") Message/Project description
+                textarea(name="description" min-height="200" class="input-control")
+            input(type="submit" value="Send →" class="button")

@@ -1,0 +1,9 @@
+extends layout
+
+include mixins/_projectFormUpdate
+
+block content
+  .inner
+    pre= h.dump(project)
+    h2= title
+    +projectFormUpdate(project)

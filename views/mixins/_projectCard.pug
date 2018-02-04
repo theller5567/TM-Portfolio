@@ -1,0 +1,14 @@
+mixin projectCard(project = {})
+  .project
+    .project__hero
+      if user && project.author.equals(user._id)
+        .project__actions
+          .project__action.project__action--edit
+            a(href=`/projects/${project._id}/edit`)
+              != h.icon('pencil')
+      a(href=`/project/${project.slug}`)
+        img(src=`/uploads/projects/${project.photo || 'project.png'}`)
+    .project__details
+      h2.title--green
+        a(href=`/project/${project.slug}`) #{project.name}
+      p= project.description.split(' ').slice(0, 25).join(' ')
