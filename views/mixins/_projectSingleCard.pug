@@ -1,15 +1,20 @@
 mixin projectSingleCard(project = {})
-  .project--single
-    .project__hero
-        if project.link
-            a(href=`${project.link}`, target='new_blank')
-                img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
-            .button--view
-                a(href=`${project.link}`, target='new_blank') Open Project
-        else
-            img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
-    ul.tags
-        each t in project.tags
-            li.tag
-                span.tag__link= t
+    .project--single
+        .project__hero
+            if project.link
+                a(href=`${project.link}`, target='new_blank')
+                    img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
+                .button--view
+                    a(href=`${project.link}`, target='new_blank') Open Project 
+                        img(class="open" src='../images/icons/open.svg', alt="open project")
+            else
+                a(href=``)
+                    img(src=`/uploads/projects/${project.photo || 'project.png'}` alt=project.name)
+                .button--view--construction
+                    a(href='') Project Under Construction
+                        img(class="under-construction" src='../images/icons/under-sonstruction.svg', alt="Under Construction")
+        ul.tags
+            each t in project.tags
+                li.tag
+                    span.tag__link= t
     

@@ -38,7 +38,8 @@
             }
         }
         .tags {
-            margin: 10px;
+            margin: 0 auto 2rem;
+            max-width: 500px;
         }
     }
     &__details {
@@ -111,9 +112,16 @@
 .project-info {
     margin: 20px auto;
     img {
-        max-width: 100%;
+        max-width: 500px;
         height: auto;
-        margin-bottom: 1em;
+        margin: 0 auto 1em;
         box-shadow: $shad;
+        &.under-construction, &.open {
+            box-shadow: none;
+            max-width: 30px;
+            height: auto;
+            float: right;
+            padding-right: 10px;
+        }
     }
 }

@@ -2,16 +2,12 @@ extends layout
 include mixins/_projectSingleCard
 
 block content
-  .single
-    .single__hero
-      img.single__image(src=`/uploads/projects/${project.photo || 'store.png'}`)
-      h2.title.title--single
-        a(href=`/project/${project.slug}`) #{project.name}
-    .inner
-      .project-info
-        .row
-          .col-md-4.col-sm-12
-            +projectSingleCard(project)
-          .col-md-8.col-sm-12
-            .subtitle= project.description
+  .inner
+    h2.page-title= project.name
+    .project-info
+      .row
+        .col-md-12.col-sm-12
+          +projectSingleCard(project)
+        .col-md-12.col-sm-12
+          .subtitle= project.description
       

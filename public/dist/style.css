@@ -615,6 +615,9 @@ html, body {
     /* Chrome10+,Safari5.1+ */
     opacity: 0.9; }
 
+.single {
+  position: relative; }
+
 .inner, .inner--home {
   position: relative;
   max-width: 900px;
@@ -1083,7 +1086,8 @@ p {
 
 .subtitle, .subtitle--center {
   color: #6a6a6a;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  line-height: 1.4em; }
   .subtitle--center {
     text-align: center; }
 
@@ -1395,7 +1399,8 @@ label {
         object-fit: cover;
         margin: 0; }
     .project--single .tags {
-      margin: 10px; }
+      margin: 0 auto 2rem;
+      max-width: 500px; }
   .project__details {
     padding: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
@@ -1457,18 +1462,23 @@ label {
 .project-info {
   margin: 20px auto; }
   .project-info img {
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
+    .project-info img.under-construction, .project-info img.open {
+      box-shadow: none;
+      max-width: 30px;
+      height: auto;
+      float: right;
+      padding-right: 10px; }
 
 .tags {
-  margin: 1em 0;
+  margin: 1em auto;
   padding: 0;
   list-style: none;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 2rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
@@ -1734,16 +1744,18 @@ label {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  background: white;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
+  background: #303030;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  color: white; }
   .pagination__next {
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
     padding: 1rem 3rem 1rem 1rem; }
     .pagination__next a:after {
       margin-left: 1rem;
+      color: white;
       content: '\2192'; }
   .pagination__prev {
     -ms-flex: 0 0 auto;
@@ -1751,12 +1763,15 @@ label {
     padding: 1rem 1rem 1rem 3rem; }
     .pagination__prev a:before {
       margin-right: 1rem;
+      color: white;
       content: '\2190'; }
   .pagination__text {
     -ms-flex: 3 0 auto;
         flex: 3 0 auto;
     padding: 1rem;
     text-align: center; }
+    .pagination__text p {
+      line-height: 1; }
 
 .map {
   padding: 20px;
@@ -1775,19 +1790,24 @@ label {
   text-indent: -999999px;
   font-size: 0; }
 
-.button, .button--delete, .button--view {
+.button, .button--delete, .button--view, .button--view--construction {
   border: 0;
   background: #8ec123;
   color: #303030;
   font-weight: 600; }
   .button--delete {
     background-color: #ff9900; }
-  .button--view {
-    margin: 10px; }
-    .button--view a {
+  .button--view, .button--view--construction {
+    margin: 10px auto;
+    max-width: 500px; }
+    .button--view a, .button--view--construction a {
       text-align: center;
       padding: 1em;
       display: block; }
+  .button--view--construction {
+    opacity: 0.3; }
+    .button--view--construction a {
+      cursor: default; }
 
 .avatar {
   min-width: 50px;

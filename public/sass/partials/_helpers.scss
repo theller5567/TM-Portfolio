@@ -14,11 +14,19 @@
   }
   &--view {
     @extend .button;
-    margin: 10px;
+    margin: 10px auto;
+    max-width: 500px;
     a {
       text-align: center;
       padding: 1em;
       display: block;
+    }
+  }
+  &--view--construction {
+    @extend .button--view;
+    opacity: 0.3;
+    a {
+      cursor: default;
     }
   }
 }

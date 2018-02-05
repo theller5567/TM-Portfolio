@@ -13,7 +13,7 @@ mixin projectForm(project = {})
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
       if project.photo
         img(src=`/uploads/projects/${project.photo}`, alt=project.name width=200)
-    - const choices = ['Web-Site', 'Javascript', 'Web-App', 'Angular', 'Design', 'Animation', 'Illustration']
+    - const choices = ['Web-Site', 'Javascript', 'Web-App', 'Angular', 'Node.js', 'Meteor.js', 'MongoDB', 'PHP', 'CSS', 'Design', 'Animation', 'Illustration', 'Responsive Design']
     - const tags = project.tags || []
     ul.tags
       each choice in choices
