@@ -11,8 +11,20 @@
       flex: 1 1 auto;
     }
   }
-  &__item {
+  &__item,  &__item--hide {
     display: flex;
+  }
+
+  &__item--hide {
+    display: flex;
+    a.nav__link {
+      background: transparent;
+      color: $black;
+      cursor: default;
+      &:hover {
+        background: transparent;
+      }
+    }
   }
   &__link {
     background: $black;

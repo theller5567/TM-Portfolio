@@ -1268,9 +1268,18 @@ label {
     .nav__section--search {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto; }
-  .nav__item {
+  .nav__item, .nav__item--hide {
     display: -ms-flexbox;
     display: flex; }
+  .nav__item--hide {
+    display: -ms-flexbox;
+    display: flex; }
+    .nav__item--hide a.nav__link {
+      background: transparent;
+      color: #303030;
+      cursor: default; }
+      .nav__item--hide a.nav__link:hover {
+        background: transparent; }
   .nav__link {
     background: #303030;
     color: white;
@@ -1836,5 +1845,17 @@ pre.error {
   color: white;
   padding: 10px 0;
   box-sizing: border-box; }
+  .footer__footerinfo {
+    display: block;
+    text-align: center; }
+  .footer p, .footer .github-icon {
+    display: inline-block;
+    vertical-align: middle; }
+  .footer .github-icon {
+    width: 45px;
+    height: auto;
+    margin-left: 20px; }
+    .footer .github-icon svg {
+      fill: #6a6a6a; }
 
 /*# sourceMappingURL=style.css.map*/

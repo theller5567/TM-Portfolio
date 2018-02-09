@@ -60,8 +60,6 @@ exports.deleteProject = async (req,res) => {
     // 1. Find the store given the ID
     const project = await Project.deleteOne({ _id: req.params.id });
     console.log('PROJECT TO DELETE: ', project);
-    //project.remove();
-    // 3. Render out the edit form so the user can update their projects
     res.redirect('/projects');
 };
 
@@ -79,7 +77,6 @@ exports.resize = async (req, res, next) => {
     const photo = await jimp.read(req.file.buffer);
     await photo.resize(800, jimp.AUTO);
     await photo.write(`./public/uploads/projects/${req.body.photo}`);
-    // once we have written the photo to our filesystem, keep going!
     next();
 };
 
@@ -100,7 +97,7 @@ exports.updateProject = async (req, res) => {
     }).exec();
     //req.flash('success', `Successfully updated <strong>${project.name}</strong>. <a href="/projects/${project.slug}">View Project →</a>`);
     res.render('project', { project, title: project.name });
-    // Redriect them the projects and tell them it worked
+    // Redriect them to projects and tell them it worked
 };
 
 exports.getProjectBySlug = async (req, res, next) => {

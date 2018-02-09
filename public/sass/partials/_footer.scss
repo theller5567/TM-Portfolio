@@ -6,4 +6,20 @@
     color: white;
     padding: 10px 0;
     box-sizing: border-box;
+    &__footerinfo {
+        display: block;
+        text-align: center;
+    }
+    p, .github-icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .github-icon {
+        width: 45px;
+        height: auto;
+        margin-left: 20px;
+        svg {
+            fill: #6a6a6a;
+        }
+    }
 }
